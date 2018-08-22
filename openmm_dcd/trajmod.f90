@@ -46,6 +46,7 @@ contains
       this % btrajxtcType = .true.
       call trajxtc % init(fname)
       isize = size(trajxtc % pos(1,:))
+      this % NATOMS = isize
       if(.not. allocated(this % pos)) then
         allocate(this % pos(3,isize))
       endif
@@ -54,6 +55,7 @@ contains
       this % bOpenmmDcdType = .true.
       call openmmdcd % init(fname)
       isize = size(openmmdcd % pos(1,:))
+      this % NATOMS = isize
       if(.not. allocated(this % pos)) then
         allocate(this % pos(3,isize))
       endif
